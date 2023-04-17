@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "1007bcd0-51a8-4a64-8db7-862128b1af0a",
+		"name": "reviewproduct",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "reviewapp",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "thor",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "thor",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloakhost}}/auth/realms/mobiletester/protocol/openid-connect/token",
+					"host": [
+						"{{keycloakhost}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"mobiletester",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retrieve stat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{reviewhost}}/api/v1/review/B42000",
+					"host": [
+						"{{reviewhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"B42000"
+					],
+					"query": [
+						{
+							"key": "available",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{reviewhost}}/api/v1/review/33",
+					"host": [
+						"{{reviewhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"33"
+					],
+					"query": [
+						{
+							"key": "available",
+							"value": "false",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"authorId\":\"99655777-5d65-48f6-b971-fad8572cb721\",\n    \"productId\":\"B42000\",\n    \"score\": 4\n}"
+				},
+				"url": {
+					"raw": "{{reviewhost}}/api/v1/review",
+					"host": [
+						"{{reviewhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"authorId\":\"99655777-5d65-48f6-b971-fad8572cb721\",\n    \"productId\":\"B42000\",\n    \"score\": 1\n}"
+				},
+				"url": {
+					"raw": "{{reviewhost}}/api/v1/review/1",
+					"host": [
+						"{{reviewhost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get aggragated product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{producthost}}/api/v1/product/BB5476",
+					"host": [
+						"{{producthost}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"BB5476"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adidas call",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.adidas.co.uk/api/products/BB5476",
+					"protocol": "https",
+					"host": [
+						"www",
+						"adidas",
+						"co",
+						"uk"
+					],
+					"path": [
+						"api",
+						"products",
+						"BB5476"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

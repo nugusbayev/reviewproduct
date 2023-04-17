@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="ecpnreviewapp">
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="a3ef81b9-2047-4052-b9f0-625080bf0297"/>
+            <column name="REVIEWED_AT" value="2023-04-07 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="M20324"/>
+            <column name="SCORE" value="5"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="99655777-5d65-48f6-b971-fad8572cb72a"/>
+            <column name="REVIEWED_AT" value="2023-04-06 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="M20324"/>
+            <column name="SCORE" value="4"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="a3ef81b9-2047-4052-b9f0-625080bf0297"/>
+            <column name="REVIEWED_AT" value="2023-04-07 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="AC7836"/>
+            <column name="SCORE" value="3"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="99655777-5d65-48f6-b971-fad8572cb72a"/>
+            <column name="REVIEWED_AT" value="2023-04-06 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="AC7836"/>
+            <column name="SCORE" value="2"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="a3ef81b9-2047-4052-b9f0-625080bf0297"/>
+            <column name="REVIEWED_AT" value="2023-04-07 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="BB5476"/>
+            <column name="SCORE" value="5"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="99655777-5d65-48f6-b971-fad8572cb72a"/>
+            <column name="REVIEWED_AT" value="2023-04-06 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="BB5476"/>
+            <column name="SCORE" value="4"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="a3ef81b9-2047-4052-b9f0-625080bf0297"/>
+            <column name="REVIEWED_AT" value="2023-04-07 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="B42000"/>
+            <column name="SCORE" value="5"/>
+        </insert>
+        <insert tableName="REVIEW">
+            <column name="AUTHOR_ID" value="99655777-5d65-48f6-b971-fad8572cb72a"/>
+            <column name="REVIEWED_AT" value="2023-04-06 04:00:43.298727"/>
+            <column name="PRODUCT_ID" value="B42000"/>
+            <column name="SCORE" value="4"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
